@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Tsebo.Entities;
 
 namespace Tsebo.Repository
 {
