@@ -1,10 +1,11 @@
 using Tsebo.Repository;
+using Tsebo.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 var connectionString = builder.Configuration.GetConnectionString("TseboPrimaryDb");
 builder.Services.AddNpgsql<ApplicationDbContext>(connectionString);
-builder.Services.AddScoped<IApplicationRepository, ApplicationRepositoryImplementation>();
+builder.Services.AddScoped<IApplicationRepositoryService, AppRepositoryServiceImpl>();
 
 var app = builder.Build();
 

@@ -1,8 +1,8 @@
 ﻿using Tsebo.Entities;
 
-namespace Tsebo.Repository
+namespace Tsebo.Services
 {
-    public interface IApplicationRepository
+    public interface IApplicationRepositoryService
     {
         public Task<UserTasks> GetUserTaskByIdAsync(string username, string conceptCode);
 
