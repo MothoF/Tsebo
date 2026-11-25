@@ -1,6 +1,6 @@
 ﻿namespace Tsebo.Repository
 {
-    public class ApplicationRepositoryImplementation
+    public class ApplicationRepositoryImplementation : IApplicationRepository
     {
     }
 }
