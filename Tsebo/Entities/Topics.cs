@@ -5,5 +5,6 @@
         public required String TopicCode { get; set; }
         public required String TopicName { get; set; }
         public required List<Concepts> Concepts { get; set; }
+        public required List<ModuleTopics> ModuleTopics { get; set; }
     }
 }
