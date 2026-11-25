@@ -48,6 +48,21 @@ namespace Tsebo.Repository
                 .HasOne(ut => ut.Concept)
                 .WithMany(c => c.UserTasks)
                 .HasForeignKey(ut => ut.ConceptCode);
+
+            modelBuilder.Entity<Concepts>()
+                .HasOne(c => c.Topic)
+                .WithMany(t => t.Concepts)
+                .HasForeignKey(c => c.TopicCode);
+            
+            modelBuilder.Entity<ModuleTopics>()
+                .HasOne(mt => mt.Module)
+                .WithMany(m => m.ModuleTopics)
+                .HasForeignKey(mt => mt.ModuleCode);
+
+            modelBuilder.Entity<ModuleTopics>()
+                .HasOne(mt => mt.Topic)
+                .WithMany(t => t.ModuleTopics)
+                .HasForeignKey(mt => mt.TopicCode);
         }
     }
 }
