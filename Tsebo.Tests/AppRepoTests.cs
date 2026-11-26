@@ -15,10 +15,10 @@ public class AppRepoTests
     [Fact]
     public async void AddUserTask_ValidUserTask_Succeed()
     {
-        Users user = new Users("johndoe@testing.com", "John", "Doe");
-        Topics topic = new Topics("06", "Collections");
-        Concepts concept = new Concepts("ARS", "Arrays", "06");
-        UserTasks task = new UserTasks("johndoe@testing.com", "ARS", "InProgress","Medium","2026-12-15");
+        Users user = new Users("johndoe@testing.com", "John", "Doe", null);
+        Topics topic = new Topics("06", "Collections", null, null);
+        Concepts concept = new Concepts("ARS", "Arrays", "06", null, null);
+        UserTasks task = new UserTasks("johndoe@testing.com", user, "ARS", concept, new DateOnly(2026, 12, 15), "InProgress","Medium");
 
         UserTasks createdTask = (UserTasks) await repositoryService.CreateUserTasksAsync(task);
 
