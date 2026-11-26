@@ -2,9 +2,17 @@
 {
     public class Topics
     {
-        public required String TopicCode { get; set; }
-        public required String TopicName { get; set; }
-        public required List<Concepts> Concepts { get; set; }
-        public required List<ModuleTopics> ModuleTopics { get; set; }
+        public required string TopicCode { get; set; }
+        public required string TopicName { get; set; }
+        public List<Concepts>? Concepts { get; set; }
+        public List<ModuleTopics>? ModuleTopics { get; set; }
+
+        public Topics(string topicCode, string topicName, List<Concepts>? concepts, List<ModuleTopics>? moduleTopics)
+        {
+            TopicCode = topicCode;
+            TopicName = topicName;
+            Concepts = concepts;
+            ModuleTopics = moduleTopics;
+        }
     }
 }

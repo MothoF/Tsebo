@@ -2,9 +2,17 @@
 {
     public class ModuleTopics
     {
-        public required String ModuleCode { get; set; }
-        public required Modules Module { get; set; }
-        public required String TopicCode { get; set; }
-        public required Topics Topic { get; set; }
+        public required string ModuleCode { get; set; }
+        public Modules? Module { get; set; }
+        public required string TopicCode { get; set; }
+        public Topics? Topic { get; set; }
+
+        public ModuleTopics(string ModuleCode, string TopicCode, Modules? Module, Topics? Topic)
+        {
+            this.ModuleCode = ModuleCode;
+            this.TopicCode = TopicCode;
+            this.Module = Module;
+            this.Topic = Topic;
+        }
     }
 }

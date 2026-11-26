@@ -4,9 +4,17 @@ namespace Tsebo.Entities
 {
     public class Users
     {
-        public required String Username { get; set; }
-        public String? FirstName { get; set; }
-        public String? LastName { get; set; }
-        public required List<UserTasks> UserTasks { get; set; }
+        public required string Username { get; set; }
+        public required string FirstName { get; set; }
+        public required string LastName { get; set; }
+        public List<UserTasks>? UserTasks { get; set; }
+
+        public Users(string Username, string FirstName, string LastName, List<UserTasks>? UserTasks)
+        {
+            this.Username = Username;
+            this.FirstName = FirstName;
+            this.LastName = LastName;
+            this.UserTasks = UserTasks;
+        }
     }
 }
