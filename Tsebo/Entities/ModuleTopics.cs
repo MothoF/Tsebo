@@ -7,10 +7,12 @@
         public required string TopicCode { get; set; }
         public Topics? Topic { get; set; }
 
-        public ModuleTopics(string ModuleCode, string TopicCode)
+        public ModuleTopics(string ModuleCode, string TopicCode, Modules? Module, Topics? Topic)
         {
             this.ModuleCode = ModuleCode;
             this.TopicCode = TopicCode;
+            this.Module = Module;
+            this.Topic = Topic;
         }
     }
 }

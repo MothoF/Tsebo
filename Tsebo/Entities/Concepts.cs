@@ -8,11 +8,13 @@
         public Topics? Topic { get; set; }
         public List<UserTasks>? UserTasks { get; set; }
         
-        public Concepts(string ConceptCode, string ConceptName, string TopicCode)
+        public Concepts(string ConceptCode, string ConceptName, string TopicCode, Topics? Topic, List<UserTasks>? UserTasks)
         {
             this.ConceptCode = ConceptCode;
             this.ConceptName = ConceptName;
             this.TopicCode = TopicCode;
+            this.Topic = Topic;
+            this.UserTasks = UserTasks;
         }
     }
 }
