@@ -1,4 +1,6 @@
-﻿namespace Tsebo.Entities
+﻿using System.Diagnostics.CodeAnalysis;
+
+namespace Tsebo.Entities
 {
     public class UserTasks
     {
@@ -9,7 +11,7 @@
         public DateOnly? Deadline { get; set; }
         public String? Status { get; set; }
         public String? Priority { get; set; }
-
+        [SetsRequiredMembers]
         public UserTasks(string username, Users? user, string conceptCode, Concepts? concept, DateOnly? deadline, string? status, string? priority)
         {
             Username = username;
@@ -20,5 +22,7 @@
             Status = status;
             Priority = priority;
         }
+
+        public UserTasks() { }
     }
 }

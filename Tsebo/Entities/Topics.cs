@@ -1,4 +1,6 @@
-﻿namespace Tsebo.Entities
+﻿using System.Diagnostics.CodeAnalysis;
+
+namespace Tsebo.Entities
 {
     public class Topics
     {
@@ -6,7 +8,7 @@
         public required string TopicName { get; set; }
         public List<Concepts>? Concepts { get; set; }
         public List<ModuleTopics>? ModuleTopics { get; set; }
-
+        [SetsRequiredMembers]
         public Topics(string topicCode, string topicName, List<Concepts>? concepts, List<ModuleTopics>? moduleTopics)
         {
             TopicCode = topicCode;
@@ -14,5 +16,7 @@
             Concepts = concepts;
             ModuleTopics = moduleTopics;
         }
+
+        public Topics() { }
     }
 }
