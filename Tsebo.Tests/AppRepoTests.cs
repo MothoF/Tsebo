@@ -5,6 +5,7 @@ using Tsebo.Entities;
 using Microsoft.EntityFrameworkCore;
 using Tsebo.Repository;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.EntityFrameworkCore.ChangeTracking.Internal;
 
 public class AppRepoTests : IClassFixture<CustomWebApplicationFactory>, IAsyncLifetime
 {
@@ -15,8 +16,9 @@ public class AppRepoTests : IClassFixture<CustomWebApplicationFactory>, IAsyncLi
     public AppRepoTests(CustomWebApplicationFactory factory)
     {
         this.factory = factory;
-        this.repositoryService = factory.Services.GetRequiredService<IApplicationRepositoryService>();
-        this.dbContext = factory.Services.GetRequiredService<ApplicationDbContext>();
+        var scope = factory.Services.CreateScope();
+        this.repositoryService = scope.ServiceProvider.GetRequiredService<IApplicationRepositoryService>();
+        this.dbContext = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
     }
 
     [Fact]
