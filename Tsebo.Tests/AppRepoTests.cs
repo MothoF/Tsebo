@@ -15,7 +15,7 @@ public class AppRepoTests : IClassFixture<CustomWebApplicationFactory>, IAsyncLi
     public AppRepoTests(CustomWebApplicationFactory factory)
     {
         this.factory = factory;
-        this.repositoryService = this.factory.Services.GetRequiredService<IApplicationRepositoryService>();
+        this.repositoryService = factory.Services.GetRequiredService<IApplicationRepositoryService>();
         this.dbContext = factory.Services.GetRequiredService<ApplicationDbContext>();
     }
 
