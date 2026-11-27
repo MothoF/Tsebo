@@ -9,12 +9,12 @@ namespace Tsebo.Repository
         {
         }
 
-        DbSet<Users> Users => Set<Users>();
-        DbSet<Modules> Modules => Set<Modules>();
-        DbSet<Topics> Topics => Set<Topics>();
-        DbSet<Concepts> Concepts => Set<Concepts>();
-        DbSet<UserTasks> UserTasks => Set<UserTasks>();
-        DbSet<ModuleTopics> ModuleTopics => Set<ModuleTopics>();
+        public DbSet<Users> Users => Set<Users>();
+        public DbSet<Modules> Modules => Set<Modules>();
+        public DbSet<Topics> Topics => Set<Topics>();
+        public DbSet<Concepts> Concepts => Set<Concepts>();
+        public DbSet<UserTasks> UserTasks => Set<UserTasks>();
+        public DbSet<ModuleTopics> ModuleTopics => Set<ModuleTopics>();
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
