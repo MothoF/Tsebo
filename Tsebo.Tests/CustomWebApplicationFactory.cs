@@ -12,7 +12,7 @@ using Tsebo.Services;
 
 namespace Tsebo.Tests
 {
-    internal class CustomWebApplicationFactory : WebApplicationFactory<Program>
+    public class CustomWebApplicationFactory : WebApplicationFactory<Program>
     {
         protected override void ConfigureWebHost(IWebHostBuilder builder)
         {

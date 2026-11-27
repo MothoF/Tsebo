@@ -13,7 +13,7 @@ public class AppRepoTests
     }
 
     [Fact]
-    public async void AddUserTask_ValidUserTask_Succeed()
+    public async Task AddUserTask_ValidUserTask_Succeed()
     {
         Users user = new Users("johndoe@testing.com", "John", "Doe", null);
         Topics topic = new Topics("06", "Collections", null, null);
