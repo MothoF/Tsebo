@@ -1,12 +1,20 @@
 ﻿using Tsebo.Entities;
+using Tsebo.Repository;
 
 namespace Tsebo.Services
 {
     public class AppRepositoryServiceImpl : IApplicationRepositoryService
     {
-        Task<UserTasks> IApplicationRepositoryService.CreateUserTasksAsync(UserTasks userTask)
+        private readonly ApplicationDbContext dbContext;
+
+        public AppRepositoryServiceImpl(ApplicationDbContext dbContext) {
+            this.dbContext = dbContext;
+        }
+        async Task<UserTasks> IApplicationRepositoryService.CreateUserTasksAsync(UserTasks userTask)
         {
-            throw new NotImplementedException();
+            var createdTask = dbContext.UserTasks.Add(userTask);
+            await dbContext.SaveChangesAsync();
+            return createdTask.Entity;
         }
 
         Task<bool> IApplicationRepositoryService.DeleteUserTasksById(string username, string conceptCode)
