@@ -44,8 +44,6 @@ public class AppRepoTests : IClassFixture<CustomWebApplicationFactory>, IAsyncLi
 
     public async Task InitializeAsync()
     {
-        //var options = new DbContextOptionsBuilder<ApplicationDbContext>().UseNpgsql("").Options;
-        //dbContext = new ApplicationDbContext(options);
         Users user = new Users("johndoe@testing.com", "John", "Doe", null);
         Topics topic = new Topics("06", "Collections", null, null);
         Concepts concept = new Concepts("ARS", "Arrays", "06", null, null);
