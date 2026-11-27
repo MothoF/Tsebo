@@ -32,6 +32,7 @@ namespace Tsebo.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("TopicCode")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.HasKey("ConceptCode");
@@ -114,9 +115,11 @@ namespace Tsebo.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("FirstName")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("LastName")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.HasKey("Username");
@@ -128,7 +131,9 @@ namespace Tsebo.Migrations
                 {
                     b.HasOne("Tsebo.Entities.Topics", "Topic")
                         .WithMany("Concepts")
-                        .HasForeignKey("TopicCode");
+                        .HasForeignKey("TopicCode")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Topic");
                 });
